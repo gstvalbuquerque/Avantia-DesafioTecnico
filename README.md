@@ -8,10 +8,10 @@
 
 ### INSTALAÇÃO DO PYTHON 
 
-- **Windows**
+- **Windows**:
 download disponivel em: [Python](https://www.python.org/downloads/)
 
-- **macOS**
+- **macOS**:
 Instale o Python usando Homebrew no macOS digitando **brew install python3** no terminal.
 
 ### EXTENSÃO PYTHON NO VSC
@@ -20,10 +20,10 @@ basta ir em extensions e instalar a extensão Python.
 
 #### INSTALAÇÃO DO FLASK NO VISUAL STUDIO CODE
 
-- **macOS/Linux**
+- **macOS/Linux**:
 pip3 install flask
 
-- **Windows**
+- **Windows**:
 pip install flask
 
 #### INICIAR O SERVIDOR UTILIZANDO O FLASK NO VSC
