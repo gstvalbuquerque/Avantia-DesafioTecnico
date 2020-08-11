@@ -18,7 +18,7 @@ Instale o Python usando Homebrew no macOS digitando **brew install python3** no 
 
 basta ir em extensions e instalar a extensão Python.
 
-#### INSTALAÇÃO DO FLASK NO VISUAL STUDIO CODE
+### INSTALAÇÃO DO FLASK NO VISUAL STUDIO CODE
 
 - **macOS/Linux**:
 pip3 install flask
@@ -26,6 +26,6 @@ pip3 install flask
 - **Windows**:
 pip install flask
 
-#### INICIAR O SERVIDOR UTILIZANDO O FLASK NO VSC
+### INICIAR O SERVIDOR UTILIZANDO O FLASK NO VSC
 
 basta ir no terminal e executar o comando: **python -m flask run**.
