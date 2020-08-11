@@ -11,7 +11,7 @@ body {
 
 #page-landing {
     font-family: sans-serif;
-    background-image: url(/templates/images/bg.jpg);
+    background-image: url(/static/images/bg.jpg);
     background-size: cover;
 }
 

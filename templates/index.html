@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avantia | S.M.A</title>
 
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/main.css')}}">
 
-    <!-- CSS From Boostrap -->
+    <!-- CSS From Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -15,7 +15,7 @@
 <body id="page-landing">
     <div id="container">
         <div class="logo-container">
-            <img src="/templates/images/avantia.png" alt="Avantia">
+            <img src="{{url_for('static', filename='images/avantia.png')}}" alt="Avantia">
             <h2>Sistema para monitoramento de aglomeração</h2>
         </div>
 
