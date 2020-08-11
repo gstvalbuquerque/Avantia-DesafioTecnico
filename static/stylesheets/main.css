@@ -31,3 +31,13 @@ body {
     margin-top: 1.6rem;
 }
 
+.register-form {
+    width: 20rem; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register-form input {
+    text-align: center;
+
+}

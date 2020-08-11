@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avantia | S.M.A</title>
+{% extends "layout.html" %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/main.css')}}">
+{% block title%}
+    S.M.A
+{% endblock %}
 
-    <!-- CSS From Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-</head>
-<body id="page-landing">
+{% block body %}
     <div id="container">
         <div class="logo-container">
             <img src="{{url_for('static', filename='images/avantia.png')}}" alt="Avantia">
@@ -20,11 +13,9 @@
         </div>
 
         <div class="buttons-container">
-            <button type="button" class="btn btn-primary">Entrar</button>
-            <button type="button" class="btn btn-primary">Cadastrar</button>
+            <a><button type="button" class="btn btn-primary">Entrar</button></a>
+            
+            <a href="/register"><button h type="button" class="btn btn-primary">Cadastrar</button></a>
         </div>
-
     </div>
-    
-</body>
-</html>
+{% endblock %}
