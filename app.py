@@ -43,10 +43,12 @@ def register():
 
     else:
         # criar tabela caso não exista
-        c.execute("CREATE TABLE IF NOT EXISTS accounts ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'username' VARCHAR(50) NOT NULL, 'email' VARCHAR(250) NOT NULL, 'hash' VARCHAR(250) NOT NULL)")
+        c.execute("CREATE TABLE IF NOT EXISTS accounts ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'username' VARCHAR(50) NOT NULL,'name' VARCHAR(100), 'lastName' VAR(250), 'email' VARCHAR(250) NOT NULL, 'hash' VARCHAR(250) NOT NULL)")
 
         #pegar os dados do formulário
         username = request.form.get("username")
+        name = request.form.get("name").capitalize()
+        lastName = request.form.get("lastName").capitalize()
         password = request.form.get("password")
         conf_password = request.form.get("conf_password")
         email = request.form.get("email")
@@ -74,7 +76,7 @@ def register():
         
         #inserir no banco de dados
         password=generate_password_hash(password) 
-        c.execute("INSERT INTO accounts (username,email, hash) VALUES (?, ?, ?)", (username, email, password))
+        c.execute("INSERT INTO accounts (username, name, lastName, email, hash) VALUES (?, ?, ?, ?, ?)", (username,name, lastName, email, password))
         conn.commit() 
         flash("Registrado com sucesso!")
         return render_template("login.html")
