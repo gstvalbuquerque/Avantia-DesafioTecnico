@@ -31,7 +31,7 @@ conn = sqlite3.connect('avantia-sma.db', check_same_thread=False)
 c = conn.cursor()
 
 #criar o server
-@app.route("/", methods=["GET"])
+@app.route("/")
 def home():
     return render_template("index.html")
 
@@ -85,7 +85,36 @@ def register():
 
 
 
+
+
 # fazer o login
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
+    if request.method == "GET":
+        return render_template("login.html")
+    
+    else:
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        #Procurar no banco de dados pelo usuário
+        db_user = c.execute("SELECT * FROM accounts WHERE username = (?)", 
+                            [username])
+        
+        #Checar se estão corretos
+        user_data = db_user.fetchone()
+        if user_data == None or not check_password_hash(user_data[5], password):
+            flash("Usuário e/ou Senha Inválidos!")
+            return render_template("login.html")
+
+        #guardar id de quem fez o login
+        session["user_id"] = user_data[0]
+
+        return redirect("/homepage")
+
+@app.route("/homepage")
+def homepage():
+    db_name = c.execute("SELECT name, lastName FROM accounts WHERE id = (?)", ([session["user_id"]])).fetchone()
+    name = db_name[0].capitalize() 
+    lastName = db_name[1].capitalize()
+    return render_template("homepage.html", name = name, lastName = lastName)

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title%}
+    Homepage
+{% endblock %}
+
+{% block head %}
+{{super()}}
+<style type="text/css">
+    .logo-container p {
+        color: #FE943A;
+        margin: 2.0rem auto;
+        font-weight: bold;
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <div class="logo-container">
+        <img src="{{url_for('static', filename='images/avantia.png')}}" alt="Avantia">
+        <p>Olá, {{name}} {{lastName}}.<br> Ficamos felizes com a sua visita, mas infelizmente está página ainda não está pronta.</p>
+
+    </div> 
+    
+{% endblock %}

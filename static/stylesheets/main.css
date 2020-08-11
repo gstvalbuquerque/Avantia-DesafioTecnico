@@ -24,6 +24,10 @@ body {
 .logo-container {
     color: #ffffff;
     margin: 2.6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-container h2 {
