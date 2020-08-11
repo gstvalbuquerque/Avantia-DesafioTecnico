@@ -26,7 +26,9 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-#aqui vou configurar o sqlite3
+#configuração do banco de dados
+conn = sqlite3.connect('investsimples.db', check_same_thread=False)
+c = conn.cursor()
 
 #criar o server
 @app.route("/", methods=["GET"])
@@ -37,3 +39,8 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     return render_template("register.html")
+
+# fazer o login
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
