@@ -32,3 +32,8 @@ Session(app)
 @app.route("/", methods=["GET"])
 def home():
     return render_template("index.html")
+
+#registrar
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
