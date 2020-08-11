@@ -1,0 +1,33 @@
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-landing {
+    font-family: sans-serif;
+    background-image: url(/templates/images/bg.jpg);
+    background-size: cover;
+}
+
+#container {
+    width: 90vw;
+    max-width: 700px;
+    text-align: center;
+}
+
+.logo-container {
+    color: #ffffff;
+    margin: 2.6rem 0;
+}
+
+.logo-container h2 {
+    font-weight: 500;
+    margin-top: 1.6rem;
+}
+
