@@ -100,7 +100,7 @@ def login():
         #Procurar no banco de dados pelo usuário
         db_user = c.execute("SELECT * FROM accounts WHERE username = (?)", 
                             [username])
-        
+
         #Checar se estão corretos
         user_data = db_user.fetchone()
         if user_data == None or not check_password_hash(user_data[5], password):
@@ -112,9 +112,44 @@ def login():
 
         return redirect("/homepage")
 
+#pagina principal 
 @app.route("/homepage")
 def homepage():
     db_name = c.execute("SELECT name, lastName FROM accounts WHERE id = (?)", ([session["user_id"]])).fetchone()
     name = db_name[0].capitalize() 
     lastName = db_name[1].capitalize()
     return render_template("homepage.html", name = name, lastName = lastName)
+
+#alterar senha
+@app.route("/changepassword", methods=["GET", "POST"])
+def changepassword():
+    if request.method == ("GET"):
+        return render_template("changepassword.html")
+    
+    else:
+        username = request.form.get("username")
+        password = request.form.get("password")
+        new_password = request.form.get("new_password")
+        conf_newpassword = request.form.get("conf_password")
+
+        if new_password == password:
+            flash("Sua nova senha não pode ser igual a anterior")
+            return render_template("changepassword.html")
+        
+        elif (new_password != conf_newpassword):
+            flash("As senhas não são iguais!")
+            return render_template("changepassword.html")
+        
+        #checar dados do usário no banco de dados
+        db = c.execute("SELECT * FROM accounts WHERE username = (?)", [username]).fetchone()
+        if db == None or not check_password_hash(db[5], password):
+            flash("Usuário e/ou Senha Inválidos!")
+            return render_template("changepassword.html")
+
+        #alterar a senha no banco de dados
+        password=generate_password_hash(new_password)
+        c.execute("""UPDATE accounts SET hash = '{password}' WHERE username = '{username}'""".format(password = password, username = username))
+        conn.commit()
+        flash("Senha alterada com sucesso!")
+        return render_template("login.html")
+        redirect ("/login")

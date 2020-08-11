@@ -43,5 +43,8 @@ body {
 
 .register-form input {
     text-align: center;
+}
 
+.change_password {
+    margin-top: 0.6rem;
 }
