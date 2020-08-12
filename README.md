@@ -9,14 +9,14 @@
 ### INSTALAÇÃO DO PYTHON 
 
 - **Windows**:
-download disponivel em: [Python](https://www.python.org/downloads/)
+Download disponivel em: [Python](https://www.python.org/downloads/)
 
 - **macOS**:
 Instale o Python usando Homebrew no macOS digitando **brew install python3** no terminal.
 
 ### EXTENSÃO PYTHON NO VSC
 
-basta ir em extensions e instalar a extensão Python.
+Basta ir em extensions e instalar a extensão Python.
 
 ### INSTALAÇÃO DO FLASK NO VISUAL STUDIO CODE
 
@@ -28,4 +28,13 @@ pip install flask
 
 ### INICIAR O SERVIDOR UTILIZANDO O FLASK NO VSC
 
-basta ir no terminal e executar o comando: **python -m flask run**.
+Há duas maneiras de conseguir iniciar o servidor:
+1. Executar o comando **python app.py** no terminal;
+2. Ir no terminal e executar o comando: **python -m flask run**.
+
+
+### SOBRE O SISTEMA
+
+Trata-se um sistema de cadastro de usuários utilizando HTML, CSS, JavaScript e Python com a ajuda do Flask para integrar o front end com o back end. Utilizei também o SQLITE3 para criar um banco de dados para os cadastros. 
+
+### 

@@ -153,3 +153,6 @@ def changepassword():
         flash("Senha alterada com sucesso!")
         return render_template("login.html")
         redirect ("/login")
+
+# inicia o servidor
+app.run()
