@@ -37,4 +37,4 @@ Há duas maneiras de conseguir iniciar o servidor:
 
 Trata-se um sistema de cadastro de usuários utilizando HTML, CSS, JavaScript e Python com a ajuda do Flask para integrar o front end com o back end. Utilizei também o SQLITE3 para criar um banco de dados para os cadastros. 
 
-#### EM CASA DE DÚVIDAS, MANDA UM EMAIL PARA GUSTAVO.SALES87@HOTMAIL.COM
+#### EM CASO DE DÚVIDAS, MANDE UM EMAIL PARA GUSTAVO.SALES87@HOTMAIL.COM
